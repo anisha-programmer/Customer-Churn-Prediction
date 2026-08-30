@@ -18,14 +18,14 @@ A **production-ready Streamlit web application** for predicting customer churn u
 - **💡 Business Insights**: Strategic recommendations and key findings
 - **ℹ️ About Project**: Technical documentation and model details
 
-### 🔮 **Prediction Page**
+### **Prediction Page**
 - 18+ customer input fields (demographics, services, billing)
 - Real-time churn probability prediction
 - Risk level assessment (Low/Medium/High)
 - Visual probability gauge and distribution charts
 - Data-driven business recommendations
 
-### 📊 **Analytics Dashboard**
+### **Analytics Dashboard**
 - Key Performance Indicators (KPIs)
 - Churn distribution visualization
 - Contract vs Churn analysis
@@ -34,7 +34,7 @@ A **production-ready Streamlit web application** for predicting customer churn u
 - Feature importance rankings
 - Interactive Plotly charts
 
-### 💡 **Business Insights**
+### **Business Insights**
 - Top churn drivers identified
 - Key findings and patterns
 - Strategic recommendations
@@ -42,7 +42,7 @@ A **production-ready Streamlit web application** for predicting customer churn u
 
 ---
 
-## 🛠️ Technical Stack
+## Technical Stack
 
 ### **Frontend & UI**
 - Streamlit (Web framework)
@@ -137,7 +137,7 @@ streamlit run app.py --server.port 8502
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 customer_churn_prediction/
@@ -147,99 +147,6 @@ customer_churn_prediction/
 ├── model_columns.pkl          # Feature column names
 ├── requirements.txt           # Python dependencies
 └── README.md                  # This file
-```
-
----
-
-## 🎮 User Guide
-
-### **1. Home Page**
-- Overview of the platform
-- Key metrics at a glance
-- Platform features summary
-- Quick start instructions
-
-### **2. Customer Prediction**
-1. Enter customer information in the sidebar
-2. Fill in all fields (demographics, services, billing)
-3. Click "Generate Prediction" button
-4. View results:
-   - Churn status (Yes/No)
-   - Probability percentage
-   - Risk level assessment
-   - Business recommendations
-
-### **3. Analytics Dashboard**
-- View model performance metrics
-- Explore churn patterns by:
-  - Contract type
-  - Payment method
-  - Monthly charges
-- Analyze feature importance
-- Understand customer segments
-
-### **4. Business Insights**
-- Learn top churn drivers
-- Review key findings
-- Explore strategic recommendations
-- View expected ROI
-
-### **5. About Project**
-- Dataset information
-- Preprocessing details
-- Model specifications
-- Technology stack
-- Deployment instructions
-
----
-
-## 🌐 Deployment
-
-### **Streamlit Community Cloud (Recommended)**
-
-#### **Step 1: Push to GitHub**
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/yourusername/customer_churn_prediction.git
-git push -u origin main
-```
-
-#### **Step 2: Deploy on Streamlit Cloud**
-1. Go to [share.streamlit.io](https://share.streamlit.io)
-2. Click "New app"
-3. Select your GitHub repository
-4. Choose `main` branch
-5. Set main file path: `app.py`
-6. Click "Deploy"
-
-#### **Step 3: Configure Secrets (if needed)**
-Create `.streamlit/secrets.toml`:
-```toml
-# Add API keys or credentials here if needed
-```
-
-### **Docker Deployment**
-
-Create `Dockerfile`:
-```dockerfile
-FROM python:3.11-slim
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-COPY . .
-EXPOSE 8501
-CMD ["streamlit", "run", "app.py"]
-```
-
-Build and run:
-```bash
-docker build -t churn-prediction .
-docker run -p 8501:8501 churn-prediction
-```
-
 ---
 
 ## 🔐 Security Considerations
@@ -258,31 +165,6 @@ docker run -p 8501:8501 churn-prediction
 - **Data Caching**: Sample data cached with `@st.cache_data`
 - **Lazy Loading**: Visualizations rendered on demand
 - **Efficient Predictions**: Optimized prediction pipeline
-
----
-
-## 🐛 Troubleshooting
-
-### **Issue: Model files not found**
-```
-Solution: Ensure churn_model.pkl and model_columns.pkl are in the same directory as app.py
-```
-
-### **Issue: Port 8501 already in use**
-```bash
-streamlit run app.py --server.port 8502
-```
-
-### **Issue: Dependencies not installing**
-```bash
-pip install --upgrade pip
-pip install -r requirements.txt --force-reinstall
-```
-
-### **Issue: App runs slow**
-- Check internet connection
-- Clear browser cache
-- Restart Streamlit: `Ctrl+C` then `streamlit run app.py`
 
 ---
 
