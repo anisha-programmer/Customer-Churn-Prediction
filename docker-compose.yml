@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  streamlit:
+    build: .
+    ports:
+      - "8501:8501"
+    environment:
+      - STREAMLIT_SERVER_MAXUPLOADSIZE=200
+      - STREAMLIT_LOGGER_LEVEL=info
+    volumes:
+      - ./app.py:/app/app.py
+      - ./churn_model.pkl:/app/churn_model.pkl
+      - ./model_columns.pkl:/app/model_columns.pkl
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
