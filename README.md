@@ -60,51 +60,13 @@ A **production-ready Streamlit web application** for predicting customer churn u
 - Joblib (Model serialization)
 
 ---
-
-## 📦 Installation
-
-### **1. Clone Repository**
-```bash
-cd customer_churn_prediction
-```
-
-### **2. Create Virtual Environment**
-```bash
-# Windows
-python -m venv venv
-venv\Scripts\activate
-
-# macOS/Linux
-python3 -m venv venv
-source venv/bin/activate
-```
-
-### **3. Install Dependencies**
-```bash
-pip install -r requirements.txt
-```
-
+---
 ### **4. Verify Model Files**
 Ensure these files are in the project directory:
 - `churn_model.pkl` (Trained Random Forest model)
 - `model_columns.pkl` (Feature column names)
 
 ---
-
-## 🚀 Running the Application
-
-### **Local Development**
-```bash
-streamlit run app.py
-```
-
-The app will open at `http://localhost:8501`
-
-### **Alternative Port**
-```bash
-streamlit run app.py --server.port 8502
-```
-
 ---
 
 ## 📊 Model Information
@@ -120,34 +82,6 @@ streamlit run app.py --server.port 8502
 - **Class Distribution**: 73% Retained, 27% Churned (Balanced)
 - **Train-Test Split**: 80-20
 
-### **Performance Metrics**
-| Metric | Score |
-|--------|-------|
-| Accuracy | 78.04% |
-| Precision | 58% |
-| Recall | 61% |
-| F1-Score | 60% |
-| ROC-AUC | 0.78 |
-
-### **Input Features** (20 features)
-- **Demographics**: Gender, SeniorCitizen, Partner, Dependents
-- **Services**: PhoneService, MultipleLines, InternetService, OnlineSecurity, OnlineBackup, DeviceProtection, TechSupport, StreamingTV, StreamingMovies
-- **Billing**: Contract, PaperlessBilling, PaymentMethod
-- **Usage**: Tenure, MonthlyCharges, TotalCharges
-
----
-
-##  Project Structure
-
-```
-customer_churn_prediction/
-├── app.py                      # Main Streamlit application
-├── create_model.py            # Model creation script (demo)
-├── churn_model.pkl            # Trained Random Forest model
-├── model_columns.pkl          # Feature column names
-├── requirements.txt           # Python dependencies
-└── README.md                  # This file
----
 
 ## 🔐 Security Considerations
 
@@ -235,56 +169,6 @@ X_train_balanced, y_train_balanced = smote.fit_resample(X_train, y_train)
 
 ---
 
-## 🔄 Updates & Maintenance
-
-### **Model Retraining**
-To retrain the model with new data:
-1. Update training data
-2. Run `create_model.py` (or custom training script)
-3. Replace `churn_model.pkl` and `model_columns.pkl`
-4. Test predictions
-5. Deploy
-
-### **Version Control**
-- Tag releases: `git tag v1.0.0`
-- Maintain CHANGELOG
-- Test before deployment
-- Rollback plan in place
-
----
-
-## 📞 Support & Contributing
-
-### **Report Issues**
-- Create GitHub issue with:
-  - Description
-  - Steps to reproduce
-  - Expected vs actual behavior
-  - System information
-
-### **Contributing**
-1. Fork repository
-2. Create feature branch
-3. Commit changes
-4. Push to branch
-5. Create pull request
-
----
-
-## 📄 License
-
-MIT License - See LICENSE file for details
-
----
-
-## 👨‍💼 About
-
-**Built by**: Senior Data Scientist & ML Engineer  
-**Version**: 1.0.0  
-**Last Updated**: 2024  
-**Status**: Production-Ready
-
----
 
 ## 🎓 Learning Resources
 
@@ -309,10 +193,3 @@ MIT License - See LICENSE file for details
 
 ---
 
-<div align="center">
-
-**Built with ❤️ using Streamlit**
-
-⭐ Star this repository if you found it helpful!
-
-</div>
